@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Bit OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="welcome-screen">
+        <div class="welcome-box">
+            <div class="welcome-title-bar">ㅤ</div>
+            <div class="welcome-content">
+                <h1>8 Bit OS</h1>
+                <p>A retro-inspired webOS</p>
+                <button id="enter-os-btn">Enter</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="desktop" class="hidden">
+        <div class="icon" id="computer-icon">
+            <div class="icon-box">PC</div>
+            <p>My Computer</p>
+        </div>
+        <div class="icon" id="notepad-icon">
+            <div class="icon-box">TXT</div>
+            <p>Notepad</p>
+        </div>
+        <div class="icon" id="calc-icon">
+            <div class="icon-box">CALC</div>
+            <p>Calculator</p>
+        </div>
+
+        <div class="icon" id="paint-icon">
+            <div class="icon-box">PAINT</div>
+            <p>Paint</p>
+        </div>
+
+        <div id="window" class="window hidden">
+            <div class="title-bar">
+                <span>System v0.1</span>
+                <button class="close-btn">X</button>
+            </div>
+            <div class="window-content">
+                <p>Welcome to 8 Bit OS!</p>
+            </div>
+        </div>
+
+        <div id="notepad-window" class="window hidden">
+            <div class="title-bar">
+                <span>Notepad</span>
+                <button class="close-btn">X</button>
+            </div>
+            <div class="notepad-menu">
+                <span>File</span><span>Edit</span><span>Format</span><span>Help</span>
+            </div>
+            <textarea class="notepad-textarea" placeholder="Type here..."></textarea>
+        </div>
+
+        <div id="calc-window" class="window hidden">
+            <div class="title-bar">
+                <span>Calculator</span>
+                <button class="close-btn">X</button>
+            </div>
+            <div class="calc-body">
+                <input type="text" id="calc-screen" readonly value="0">
+                <div class="calc-grid">
+                    <button class="calc-btn" data-value="7">7</button>
+                    <button class="calc-btn" data-value="8">8</button>
+                    <button class="calc-btn" data-value="9">9</button>
+                    <button class="calc-btn op" data-value="/">/</button>
+                    <button class="calc-btn" data-value="4">4</button>
+                    <button class="calc-btn" data-value="5">5</button>
+                    <button class="calc-btn" data-value="6">6</button>
+                    <button class="calc-btn op" data-value="*">*</button>
+                    <button class="calc-btn" data-value="1">1</button>
+                    <button class="calc-btn" data-value="2">2</button>
+                    <button class="calc-btn" data-value="3">3</button>
+                    <button class="calc-btn op" data-value="-">-</button>
+                    <button class="calc-btn" data-value="0">0</button>
+                    <button class="calc-btn" id="calc-clear">C</button>
+                    <button class="calc-btn op" data-value="=">=</button>
+                    <button class="calc-btn op" data-value="+">+</button>
+                </div>
+            </div>
+        </div>
+        <div id="paint-window" class="window hidden">
+            <div class="title-bar">
+                <span>Paint</span>
+                <button class="close-btn">X</button>
+            </div>
+            <div class="paint-body">
+                <canvas id="paint-canvas" width="395" height="250"></canvas>
+                <div class="paint-tools">
+                    <div class="color-presets">
+                        <button class="swatch" data-color="#000000" style="background:#000000;"></button>
+                        <button class="swatch" data-color="#ffffff" style="background:#ffffff;"></button>
+                        <button class="swatch" data-color="#ff0000" style="background:#ff0000;"></button>
+                        <button class="swatch" data-color="#00ff00" style="background:#00ff00;"></button>
+                        <button class="swatch" data-color="#0000ff" style="background:#0000ff;"></button>
+                        <button class="swatch" data-color="#ffff00" style="background:#ffff00;"></button>
+                        <button class="swatch" data-color="#ff00ff" style="background:#ff00ff;"></button>
+                        <button class="swatch" data-color="#00ffff" style="background:#00ffff;"></button>
+                    </div>
+                    <input type="color" id="paint-color" value="#000000">
+                    <button id="paint-clear">Clear</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="start-menu" class="hidden">
+            <div class="menu-header">User</div>
+            <div class="menu-item" id="menu-computer">My Computer</div>
+            <div class="menu-item" id="menu-notepad">Notepad</div>
+            <div class="menu-item" id="menu-calc">Calculator</div>
+            <div class="menu-item" id="menu-paint">Paint</div>
+        </div>
+
+        <div class="taskbar">
+            <button id="start-btn">start</button>
+            <div class="time-display" id="clock">12:00 PM</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

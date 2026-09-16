@@ -1,0 +1,372 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #459287;
+}
+
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #459287;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.welcome-box {
+    background: #ece9d8;
+    border: 2px solid #0055ea;
+    box-shadow: 4px 4px 0px #000;
+    width: 360px;
+    padding: 0 0 20px 0;
+    text-align: center;
+}
+
+.welcome-title-bar {
+    background: linear-gradient(to right, #0058e6, #2f79f6);
+    color: white;
+    padding: 4px 8px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #0055ea;
+}
+
+.welcome-content {
+    padding: 0 20px;
+}
+
+.welcome-box h1 {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.welcome-box p {
+    font-size: 11px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#enter-os-btn {
+    background: linear-gradient(to bottom, #72bc6c, #4c8a47);
+    color: white;
+    border: 1px solid #2f582c;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 13px;
+    box-shadow: 2px 2px 0px #000;
+}
+
+#enter-os-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px #000;
+}
+
+#desktop {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-image: url('wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated;
+    position: relative;
+}
+
+.icon {
+    width: 80px;
+    margin: 15px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px black;
+    user-select: none;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background: #000;
+    color: #0f0;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    margin: 0 auto 4px;
+}
+
+.icon p {
+    font-size: 11px;
+}
+
+.window {
+    position: absolute;
+    background: #ece9d8;
+    border: 2px solid #0055ea;
+    box-shadow: 3px 3px 0px #000;
+    z-index: 10;
+}
+
+#window {
+    top: 214px;
+    left: 392px;
+    width: 280px;
+}
+
+.title-bar {
+    background: linear-gradient(to right, #0058e6, #2f79f6);
+    color: white;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: move;
+    user-select: none;
+}
+
+.title-bar button.close-btn {
+    background: #e81123;
+    color: white;
+    border: none;
+    padding: 2px 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.window-content {
+    padding: 15px;
+    font-size: 12px;
+    color: #000;
+}
+
+#notepad-window {
+    width: 320px;
+    height: 240px;
+    top: 163px;
+    left: 261px;
+    display: flex;
+    flex-direction: column;
+}
+
+.notepad-menu {
+    background: #ece9d8;
+    border-bottom: 1px solid #aca899;
+    padding: 2px 5px;
+    font-size: 11px;
+    user-select: none;
+}
+
+.notepad-menu span {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.notepad-textarea {
+    flex: 1;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 5px;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+#calc-window {
+    width: 220px;
+    top: 189px;
+    left: 571px;
+}
+
+.calc-body {
+    padding: 10px;
+    background: #ece9d8;
+}
+
+#calc-screen {
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    border: 2px inset #aca899;
+    text-align: right;
+    padding: 5px;
+    font-size: 16px;
+    font-family: monospace;
+    margin-bottom: 8px;
+}
+
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+
+.calc-btn {
+    padding: 10px;
+    background: #e1dfc7;
+    border: 1px solid #7f7f7f;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.calc-btn:active {
+    background: #cccab8;
+}
+
+.calc-btn.op {
+    background: #d4d0c8;
+}
+
+#start-menu {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 160px;
+    background: #ece9d8;
+    border: 2px solid #0055ea;
+    box-shadow: 2px 2px 0px #000;
+    z-index: 99;
+}
+
+.menu-header {
+    background: linear-gradient(to right, #0058e6, #2f79f6);
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.menu-item {
+    padding: 8px 12px;
+    font-size: 11px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu-item:hover {
+    background: #2f79f6;
+    color: white;
+}
+
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    background: linear-gradient(to bottom, #2b70e8, #1844b8);
+    border-top: 2px solid #548cfb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    z-index: 100;
+}
+
+#start-btn {
+    background: linear-gradient(to bottom, #3fa03f, #226c22);
+    color: white;
+    border: 1px solid #144414;
+    padding: 3px 10px;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    box-shadow: inset 1px 1px 0px rgba(255,255,255,0.4);
+}
+
+.time-display {
+    background: #11328c;
+    color: white;
+    padding: 4px 10px;
+    font-size: 11px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #0d266c;
+    border-top: 1px solid #0d266c;
+    box-shadow: inset 1px 1px 0px #081a4d;
+    user-select: none;
+}
+
+#paint-window {
+    width: 410px;
+    top: 200px;
+    left: 200px;
+}
+
+.paint-body {
+    padding: 8px;
+    background: #ece9d8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+#paint-canvas {
+    background: #ffffff;
+    border: 2px inset #aca899;
+    cursor: crosshair;
+}
+
+.paint-tools {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.paint-tools button {
+    padding: 2px 8px;
+    font-family: monospace;
+    font-size: 11px;
+    background: #e1dfc7;
+    border: 1px solid #7f7f7f;
+    cursor: pointer;
+}
+
+.paint-tools button:active {
+    background: #cccab8;
+}
+
+.color-presets {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.swatch {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #7f7f7f;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 0 #fff;
+}
+
+.swatch:active {
+    box-shadow: inset 1px 1px 0 #000;
+}
+
+.hidden {
+    display: none !important;
+}
