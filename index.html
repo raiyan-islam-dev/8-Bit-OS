@@ -10,6 +10,7 @@
 
     <div id="welcome-screen">
         <div class="welcome-box">
+            <!-- invisible char so the blue bar on top of welcome screen doesn't dissapear -->
             <div class="welcome-title-bar">ㅤ</div>
             <div class="welcome-content">
                 <h1>8 Bit OS</h1>
@@ -32,7 +33,6 @@
             <div class="icon-box">CALC</div>
             <p>Calculator</p>
         </div>
-
         <div class="icon" id="paint-icon">
             <div class="icon-box">PAINT</div>
             <p>Paint</p>
@@ -40,24 +40,45 @@
 
         <div id="window" class="window hidden">
             <div class="title-bar">
-                <span>System v0.1</span>
+                <span id="explorer-title">My Computer</span>
                 <button class="close-btn">X</button>
             </div>
-            <div class="window-content">
-                <p>Welcome to 8 Bit OS!</p>
+            <div class="explorer-toolbar">
+                <button id="explorer-back">← Back</button>
+                <button id="explorer-up">↑ Up</button>
+                <input type="text" id="explorer-address" readonly value="C:\">
+            </div>
+            <div class="explorer-body">
+                <div class="explorer-sidebar">
+                    <div class="sidebar-section">
+                        <div class="sidebar-header">Places</div>
+                        <div class="sidebar-item" data-path="C:\Documents">Documents</div>
+                        <div class="sidebar-item" data-path="C:\Pictures">Pictures</div>
+                        <div class="sidebar-item" data-path="C:\Wallpapers">Wallpapers</div>
+                        <div class="sidebar-item" data-path="C:\Downloads">Downloads</div>
+                    </div>
+                </div>
+                <div class="explorer-files" id="explorer-files-grid"></div>
             </div>
         </div>
+
 
         <div id="notepad-window" class="window hidden">
             <div class="title-bar">
                 <span>Notepad</span>
                 <button class="close-btn">X</button>
             </div>
-            <div class="notepad-menu">
-                <span>File</span><span>Edit</span><span>Format</span><span>Help</span>
+            <div class="menu-bar">
+                <div class="menu-dropdown-container">
+                    <span class="menu-label" id="notepad-file-btn">File</span>
+                    <div class="dropdown-menu hidden" id="notepad-file-menu">
+                        <div class="dropdown-item" id="notepad-menu-save">Save As</div>
+                    </div>
+                </div>
             </div>
             <textarea class="notepad-textarea" placeholder="Type here..."></textarea>
         </div>
+
 
         <div id="calc-window" class="window hidden">
             <div class="title-bar">
@@ -86,13 +107,23 @@
                 </div>
             </div>
         </div>
+
+
         <div id="paint-window" class="window hidden">
             <div class="title-bar">
                 <span>Paint</span>
                 <button class="close-btn">X</button>
             </div>
+            <div class="menu-bar">
+                <div class="menu-dropdown-container">
+                    <span class="menu-label" id="paint-file-btn">File</span>
+                    <div class="dropdown-menu hidden" id="paint-file-menu">
+                        <div class="dropdown-item" id="paint-menu-save">Save As</div>
+                    </div>
+                </div>
+            </div>
             <div class="paint-body">
-                <canvas id="paint-canvas" width="395" height="250"></canvas>
+                <canvas id="paint-canvas" width="395" height="190"></canvas>
                 <div class="paint-tools">
                     <div class="color-presets">
                         <button class="swatch" data-color="#000000" style="background:#000000;"></button>
@@ -110,6 +141,34 @@
             </div>
         </div>
 
+
+        <div id="save-modal" class="window hidden">
+            <div class="title-bar">
+                <span>Save As</span>
+                <button class="close-btn" id="save-modal-close">X</button>
+            </div>
+            <div class="save-modal-body">
+                <div class="save-field-row">
+                    <label for="save-folder-select">Save in:</label>
+                    <select id="save-folder-select">
+                        <option value="C:\Documents">Documents</option>
+                        <option value="C:\Pictures">Pictures</option>
+                        <option value="C:\Wallpapers">Wallpapers</option>
+                        <option value="C:\Downloads">Downloads</option>
+                    </select>
+                </div>
+                <div class="save-field-row">
+                    <label for="save-filename-input">File name:</label>
+                    <input type="text" id="save-filename-input" value="untitled.txt">
+                </div>
+                <div class="save-modal-actions">
+                    <button id="save-modal-confirm">Save</button>
+                    <button id="save-modal-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+
         <div id="start-menu" class="hidden">
             <div class="menu-header">User</div>
             <div class="menu-item" id="menu-computer">My Computer</div>
@@ -117,6 +176,7 @@
             <div class="menu-item" id="menu-calc">Calculator</div>
             <div class="menu-item" id="menu-paint">Paint</div>
         </div>
+
 
         <div class="taskbar">
             <button id="start-btn">start</button>
@@ -127,3 +187,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
